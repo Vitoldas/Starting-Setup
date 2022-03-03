@@ -18,3 +18,7 @@ You can review the error page by opening [http://localhost:3000/anyvalueThatIsNo
 #### Working with styles 
 
 Styles can be used in the file of your choice by either adding base styles that will automatically @import all styles from the stylesheet or by choosing colors or other style you wish to import to your folder by using @import
+
+# Author
+
+Vitoldas Cebatorius 2022
