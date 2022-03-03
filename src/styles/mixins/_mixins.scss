@@ -1,0 +1,50 @@
+@mixin respond-to($size, $dir) {
+  @if ($size == retina) {
+    // stylelint-disable media-feature-name-no-vendor-prefix
+    @media only screen and (min-resolution: 2dppx),
+      (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  } @else if ($size and $dir) {
+    @media screen and (#{$dir}-width: ($size + px)) {
+      @content;
+    }
+  }
+}
+
+@mixin section-responsiveness() {
+  display: grid;
+  grid-gap: 48px;
+  grid-template-areas: 'a1 a2 a3';
+  grid-template-columns: repeat(3, 1fr);
+  transition: 0.4s;
+
+  @media (max-width: 1000px) {
+    grid-template-areas: 'a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2' '. . . b b b b b b . . .';
+    grid-template-columns: repeat(12, 1fr);
+
+    @for $i from 1 through 2 {
+      :nth-child(#{$i}) {
+        grid-area: a#{$i};
+      }
+
+      :nth-child(3) {
+        grid-area: b;
+      }
+    }
+
+    @media (max-width: 680px) {
+      grid-gap: 20px;
+      grid-template-areas: 'a1' 'a2' 'a3';
+      grid-template-columns: 1fr;
+
+      @for $i from 1 through 3 {
+        :nth-child(#{$i}) {
+          grid-area: a#{$i};
+        }
+      }
+      margin: auto;
+      max-width: 416px;
+    }
+  }
+}

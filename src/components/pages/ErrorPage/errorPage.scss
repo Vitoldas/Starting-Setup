@@ -1,0 +1,33 @@
+@import '../../../styles/base/base';
+
+.error--card {
+  color: $color-fiord;
+  margin-top: 200px;
+  text-align: center;
+  font-size: $font-size-large;
+  p {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+h1 {
+  font-size: $font-size-xxlarge;
+  margin-bottom: 30px;
+}
+
+// remove btn--error / btn--error:hover after customized in atoms
+.btn--error {
+  background-color: $color-violet;
+  border-radius: 20px;
+  border: none;
+  color: $color-white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.btn--error:hover {
+  background-color: $color-dark-blue;
+  cursor: pointer;
+  transition: 0.3s;
+}
